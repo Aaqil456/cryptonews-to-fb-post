@@ -48,7 +48,7 @@ jobs:
           echo "[DEBUG] Preview of translated_news.json:"
           cat translated_news.json || echo "[WARNING] translated_news.json not found or empty"
 
-      - name: Commit and push translated preview JSON
+      - name: Commit, pull --rebase and push JSON
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
@@ -57,4 +57,5 @@ jobs:
           git add translated_news.json
           git status
           git diff --cached --quiet || git commit -m "Update translated news preview"
-          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "No changes to push"
+          git pull --rebase https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "✅ No remote changes to pull"
+          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "✅ No changes to push"
