@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Translated News</title>
+    <title>Translated News Preview</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +17,6 @@
         .news-container {
             max-width: 800px;
             margin: auto;
-            background-color: black;
             padding: 20px;
             border-radius: 10px;
         }
@@ -25,42 +24,44 @@
             margin-bottom: 20px;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
-        }
-        .news-item:last-child {
-            border-bottom: none;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 10px;
         }
         .news-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
+            margin-bottom: 10px;
+            color: #00e2b1;
         }
-        .news-description {
+        .news-content {
             font-size: 14px;
-            margin: 10px 0;
+            white-space: pre-line;
+            margin-bottom: 10px;
         }
         .news-link {
             color: #00e2b1;
             text-decoration: none;
-            cursor: pointer;
         }
         .news-link:hover {
             text-decoration: underline;
         }
-        .news-image {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-top: 5px;
         }
-        .toggle-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: sticky;
-            top: 0;
-            background-color: black;
-            z-index: 1000;
-            padding: 10px 0;
+        .status-posted {
+            background-color: #00c08a;
+            color: black;
         }
-        /* Custom Scrollbar Styles */
+        .status-ready {
+            background-color: #f1c40f;
+            color: black;
+        }
+        /* Scrollbar styling */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -77,8 +78,9 @@
     </style>
 </head>
 <body>
+    <h1 style="text-align:center; color: #00e2b1;">Translated News Preview (Ready for Facebook)</h1>
     <div class="news-container" id="news-container">
-        <!-- News will be dynamically added here -->
+        <!-- News will be dynamically inserted here -->
     </div>
     <script>
         const fetchNews = () => {
@@ -91,27 +93,27 @@
                 })
                 .then(data => {
                     const container = document.getElementById('news-container');
-                    container.innerHTML = ''; // Clear old content
+                    container.innerHTML = '';
 
-                    data.all_news.forEach((news, index) => {
+                    data.all_news.forEach((news) => {
                         const newsItem = document.createElement('div');
                         newsItem.classList.add('news-item');
+                        const badgeClass = news.status === "Posted" ? "status-posted" : "status-ready";
+                        const badgeText = news.status === "Posted" ? "Posted" : "Ready for Post";
+
                         newsItem.innerHTML = `
-                            <div class="news-title">${news.title}</div>
-                            <img src="${news.image}" alt="${news.title}" class="news-image">
-                            <div class="news-description">${news.description}</div>
-                            <a href="news.html?id=${index}" class="news-link">Baca Lagi</a>
+                            <div class="news-title">Sumber: <a href="${news.original_url}" target="_blank" class="news-link">Artikel Asal</a></div>
+                            <div class="news-content">${news.translated_facebook_post}</div>
+                            <span class="status-badge ${badgeClass}">${badgeText}</span>
                         `;
                         container.appendChild(newsItem);
                     });
                 })
                 .catch(err => {
-                    const container = document.getElementById('news-container');
-                    container.innerHTML = '<div>Error loading news. Please try again later.</div>';
+                    document.getElementById('news-container').innerHTML = '<div>Error loading news preview. Please try again later.</div>';
                 });
         };
 
-        // Initial fetch for news
         fetchNews();
     </script>
 </body>
