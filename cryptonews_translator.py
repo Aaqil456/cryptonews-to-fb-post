@@ -2,30 +2,37 @@ import os
 import requests
 import json
 import time
-import base64
 from datetime import datetime
-
 
 # Environment Variables
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN")
-WP_URL = os.getenv("WP_URL", "https://teknologiblockchain.com/wp-json/wp/v2")
-WP_USER = os.getenv("WP_USER")
-WP_APP_PASSWORD = os.getenv("WP_APP_PASSWORD")
+FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")
+FB_PAGE_ID = os.getenv("FB_PAGE_ID")
 
-# WordPress Category ID for "News"
-NEWS_CATEGORY_ID = 1413
+# Gemini Prompt (English instructions for best output)
+GEMINI_PROMPT_TEMPLATE = """
+Translate the following text into Malay. Then, write a short conclusion about the news. After that, rewrite the entire content in a casual, friendly style — like a Malay community person posting on Facebook. The tone should be simple, conversational, and relaxed. Do not be formal. Output only the final Facebook-style text.
 
+Original news:
+'{text}'
+"""
 
-# Translate text using Gemini API
+# Translate text using Gemini API with new prompt
 def translate_text_gemini(text):
     if not text or not isinstance(text, str) or not text.strip():
         return "Translation failed"
 
     gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
     headers = {"Content-Type": "application/json"}
+    prompt_text = GEMINI_PROMPT_TEMPLATE.format(text=text)
+
     payload = {
-        "contents": [{"parts": [{"text": f"Translate this text '{text}' into Malay. Only return the translated text, structured like an article."}]}]
+        "contents": [{
+            "parts": [{
+                "text": prompt_text
+            }]
+        }]
     }
 
     for attempt in range(5):
@@ -46,8 +53,7 @@ def translate_text_gemini(text):
             return "Translation failed"
     return "Translation failed"
 
-
-# Fetch news from Apify
+# Fetch all crypto news from Apify
 def fetch_news_from_apify():
     url = f"https://api.apify.com/v2/acts/buseta~crypto-news/run-sync-get-dataset-items?token={APIFY_API_TOKEN}"
     try:
@@ -61,69 +67,24 @@ def fetch_news_from_apify():
         print(f"[Apify Exception] {e}")
         return []
 
-
-# Upload image to WordPress and return media ID
-def upload_image_to_wordpress(image_url):
-    media_endpoint = f"{WP_URL}/media"
-    credentials = f"{WP_USER}:{WP_APP_PASSWORD}"
-    token = base64.b64encode(credentials.encode()).decode()
-
-    try:
-        image_data = requests.get(image_url).content
-    except Exception as e:
-        print(f"[Image Download Error] {e}")
-        return None
-
-    file_name = image_url.split("/")[-1]
-    headers = {
-        "Authorization": f"Basic {token}",
-        "Content-Disposition": f"attachment; filename={file_name}",
-        "Content-Type": "image/jpeg",
-    }
-
-    response = requests.post(media_endpoint, headers=headers, data=image_data)
-    if response.status_code == 201:
-        media_id = response.json().get("id")
-        print(f"[Image Uploaded] Media ID: {media_id}")
-        return media_id
-    else:
-        print(f"[Image Upload Error] {response.status_code}: {response.text}")
-        return None
-
-
-# Post to WordPress with featured image, category, and formatted content
-def post_to_wordpress(title, content, original_url, image_url, media_id=None, status="publish"):
-    post_endpoint = f"{WP_URL}/posts"
-    credentials = f"{WP_USER}:{WP_APP_PASSWORD}"
-    token = base64.b64encode(credentials.encode()).decode()
-
-    # Embed image at the top and link at the bottom
-    full_content = f'<img src="{image_url}" alt="{title}"/>\n\n{content}\n\n<p>📌 <a href="{original_url}" target="_blank">Baca artikel asal di sini.</a></p>'
+# Post casual Malay text to Facebook page (text-only)
+def post_to_facebook(message):
+    fb_api_url = f"https://graph.facebook.com/{FB_PAGE_ID}/feed"
 
     post_data = {
-        "title": title,
-        "content": full_content,
-        "status": status,
-        "categories": [NEWS_CATEGORY_ID]
-    }
-    if media_id:
-        post_data["featured_media"] = media_id
-
-    headers = {
-        "Authorization": f"Basic {token}",
-        "Content-Type": "application/json",
+        "message": message,
+        "access_token": FB_PAGE_ACCESS_TOKEN
     }
 
-    response = requests.post(post_endpoint, headers=headers, json=post_data)
-    if response.status_code == 201:
-        print(f"[Post Created] {title}")
+    response = requests.post(fb_api_url, data=post_data)
+    if response.status_code == 200:
+        print(f"[Post Success]")
         return True
     else:
         print(f"[Post Error] {response.status_code}: {response.text}")
         return False
 
-
-# Save the latest news batch to JSON
+# Save to JSON for logging
 def save_to_json(news_list, filename="translated_news.json"):
     output = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -133,44 +94,32 @@ def save_to_json(news_list, filename="translated_news.json"):
         json.dump(output, f, ensure_ascii=False, indent=4)
     print(f"[JSON Saved] {filename}")
 
-
 # Main function
 def main():
-    if not APIFY_API_TOKEN or not GEMINI_API_KEY or not WP_USER or not WP_APP_PASSWORD:
+    if not APIFY_API_TOKEN or not GEMINI_API_KEY or not FB_PAGE_ACCESS_TOKEN or not FB_PAGE_ID:
         print("[ERROR] One or more environment variables are missing!")
         return
 
     fetched_news = fetch_news_from_apify()
     translated_news = []
 
-    for idx, news in enumerate(fetched_news[:20]):
-        print(f"\nProcessing news {idx + 1} of {min(20, len(fetched_news))}")
+    for idx, news in enumerate(fetched_news):
+        print(f"\nProcessing news {idx + 1} of {len(fetched_news)}")
 
         original_url = news.get("link") or ""
-        image_url = news.get("image") or ""
+        content_to_translate = f"{news.get('title', '')}\n\n{news.get('summary', '')}\n\n{news.get('content', '')}\n\nSumber asal: {original_url}"
 
-        if not original_url:
-            print(f"[SKIP] No original URL found. Skipping this news.")
+        translated_fb_post = translate_text_gemini(content_to_translate)
+
+        if translated_fb_post == "Translation failed":
+            print(f"[SKIP] Translation failed for news {idx + 1}. Skipping this news.")
             continue
 
-        title = translate_text_gemini(news.get("title") or "")
-        description = translate_text_gemini(news.get("summary") or "")
-        content = translate_text_gemini(news.get("content") or "")
-
-        if title == "Translation failed" or content == "Translation failed":
-            print(f"[SKIP] Translation failed for '{news.get('title', 'Untitled')}'. Skipping this news.")
-            continue
-
-        media_id = upload_image_to_wordpress(image_url) if image_url else None
-
-        post_success = post_to_wordpress(title, content, original_url, image_url, media_id)
+        post_success = post_to_facebook(translated_fb_post)
 
         translated_news.append({
-            "title": title,
-            "description": description,
-            "content": content,
-            "image": image_url,
-            "url": original_url,
+            "original_url": original_url,
+            "translated_facebook_post": translated_fb_post,
             "timestamp": news.get("time", datetime.now().isoformat()),
             "status": "Posted" if post_success else "Failed"
         })
@@ -178,7 +127,6 @@ def main():
         time.sleep(1)
 
     save_to_json(translated_news)
-
 
 if __name__ == "__main__":
     main()
