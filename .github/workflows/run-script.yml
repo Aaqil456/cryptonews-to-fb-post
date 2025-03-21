@@ -35,12 +35,13 @@ jobs:
             exit 1
           else
             echo "✅ Required secrets are set."
+          fi
 
       - name: Run translation and preview script
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}  # Optional
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}  # Optional, will skip post if not set
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}                      # Optional
         run: |
           python cryptonews_translator.py
