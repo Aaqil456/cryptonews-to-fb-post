@@ -7,10 +7,10 @@ from datetime import datetime
 # Environment Variables
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN")
-FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")
-FB_PAGE_ID = os.getenv("FB_PAGE_ID")
+FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")  # Optional for now
+FB_PAGE_ID = os.getenv("FB_PAGE_ID")  # Optional for now
 
-# Gemini Prompt (English instructions for best output)
+# Gemini prompt template
 GEMINI_PROMPT_TEMPLATE = """
 Translate the following text into Malay. Then, write a short conclusion about the news. After that, rewrite the entire content in a casual, friendly style — like a Malay community person posting on Facebook. The tone should be simple, conversational, and relaxed. Do not be formal. Output only the final Facebook-style text.
 
@@ -18,7 +18,7 @@ Original news:
 '{text}'
 """
 
-# Translate text using Gemini API with new prompt
+# Translate text using Gemini API
 def translate_text_gemini(text):
     if not text or not isinstance(text, str) or not text.strip():
         return "Translation failed"
@@ -67,10 +67,13 @@ def fetch_news_from_apify():
         print(f"[Apify Exception] {e}")
         return []
 
-# Post casual Malay text to Facebook page (text-only)
+# Post text to Facebook (if configured)
 def post_to_facebook(message):
-    fb_api_url = f"https://graph.facebook.com/{FB_PAGE_ID}/feed"
+    if not FB_PAGE_ACCESS_TOKEN or not FB_PAGE_ID:
+        print("[INFO] Facebook configuration not found. Skipping posting.")
+        return False
 
+    fb_api_url = f"https://graph.facebook.com/{FB_PAGE_ID}/feed"
     post_data = {
         "message": message,
         "access_token": FB_PAGE_ACCESS_TOKEN
@@ -84,7 +87,7 @@ def post_to_facebook(message):
         print(f"[Post Error] {response.status_code}: {response.text}")
         return False
 
-# Save to JSON for logging
+# Save translated content (before posting)
 def save_to_json(news_list, filename="translated_news.json"):
     output = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -96,8 +99,8 @@ def save_to_json(news_list, filename="translated_news.json"):
 
 # Main function
 def main():
-    if not APIFY_API_TOKEN or not GEMINI_API_KEY or not FB_PAGE_ACCESS_TOKEN or not FB_PAGE_ID:
-        print("[ERROR] One or more environment variables are missing!")
+    if not APIFY_API_TOKEN or not GEMINI_API_KEY:
+        print("[ERROR] APIFY_API_TOKEN or GEMINI_API_KEY missing!")
         return
 
     fetched_news = fetch_news_from_apify()
@@ -115,13 +118,18 @@ def main():
             print(f"[SKIP] Translation failed for news {idx + 1}. Skipping this news.")
             continue
 
-        post_success = post_to_facebook(translated_fb_post)
+        post_success = False
+        # Only attempt post if FB config exists
+        if FB_PAGE_ACCESS_TOKEN and FB_PAGE_ID:
+            post_success = post_to_facebook(translated_fb_post)
+        else:
+            print("[INFO] Facebook post skipped. Just saving to JSON for review.")
 
         translated_news.append({
             "original_url": original_url,
             "translated_facebook_post": translated_fb_post,
             "timestamp": news.get("time", datetime.now().isoformat()),
-            "status": "Posted" if post_success else "Failed"
+            "status": "Posted" if post_success else "Ready for post"
         })
 
         time.sleep(1)
