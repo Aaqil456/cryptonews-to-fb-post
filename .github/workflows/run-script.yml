@@ -1,9 +1,9 @@
-name: Run Translation Script and Post to WordPress
+name: Run Translation Script and Save Preview JSON
 
 on:
-  workflow_dispatch:  # Manual run from Actions tab
+  workflow_dispatch:  # Manual trigger from Actions tab
   #schedule:
-    #- cron: "0 * * * *"  # Uncomment to run every hour
+  #  - cron: "0 * * * *"  # Uncomment if you want automatic hourly run in future
 
 permissions:
   contents: write
@@ -23,35 +23,31 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install google-generativeai requests beautifulsoup4
-          pip install --upgrade google-generativeai
 
       - name: Verify Secrets
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          WP_USER: ${{ secrets.WP_USER }}
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
         run: |
-          if [ -z "${APIFY_API_TOKEN}" ] || [ -z "${GEMINI_API_KEY}" ] || [ -z "${WP_USER}" ] || [ -z "${WP_APP_PASSWORD}" ]; then
-            echo "❌ One or more secrets are missing!"
+          if [ -z "${APIFY_API_TOKEN}" ] || [ -z "${GEMINI_API_KEY}" ]; then
+            echo "❌ APIFY_API_TOKEN or GEMINI_API_KEY is missing!"
             exit 1
-          fi
+          else
+            echo "✅ Required secrets are set."
 
-      - name: Run translation and posting script
+      - name: Run translation and preview script
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          WP_USER: ${{ secrets.WP_USER }}
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_URL: ${{ secrets.WP_URL }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}  # Optional
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}                      # Optional
         run: |
           python cryptonews_translator.py
-          echo "[DEBUG] Contents of translated_news.json:"
+          echo "[DEBUG] Preview of translated_news.json:"
           cat translated_news.json || echo "[WARNING] translated_news.json not found or empty"
 
-      - name: Commit and push translated news JSON
+      - name: Commit and push translated preview JSON
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
@@ -59,5 +55,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add translated_news.json
           git status
-          git diff --cached --quiet || git commit -m "Update translated news"
-          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
+          git diff --cached --quiet || git commit -m "Update translated news preview"
+          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main || echo "No changes to push"
