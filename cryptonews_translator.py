@@ -12,7 +12,12 @@ FB_PAGE_ID = os.getenv("FB_PAGE_ID")  # Optional for now
 
 # Gemini prompt template
 GEMINI_PROMPT_TEMPLATE = """
-Translate the following text into Malay. Then, write a short conclusion about the news. After that, rewrite the entire content in a casual, friendly style — like a Malay community person posting on Facebook. The tone should be simple, conversational, and relaxed. Do not be formal but be respectful. the maximum character should be 280. Output only the final Facebook-style text.
+Translate the following news into Malay.  
+Then, kindly write a short conclusion or summary of the news.  
+Please rewrite the content in a polite, warm, and conversational tone — as if a friendly Malaysian sharing useful information with the community on Facebook.  
+Use approachable language, be respectful, avoid slang, and make the post feel helpful and positive.  
+At the end, gently encourage readers to stay updated and make smart decisions.  
+Output only the final version of the post in Malay. 
 
 Original news:
 '{text}'
