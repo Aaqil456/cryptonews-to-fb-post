@@ -14,9 +14,9 @@ FB_PAGE_ID = os.getenv("FB_PAGE_ID")  # Optional for now
 GEMINI_PROMPT_TEMPLATE = """
 Translate the following news into Malay.  
 Then, kindly write a short conclusion or summary of the news in less than 280 characters in 1 paragraph.  
-Please rewrite the content in a polite, warm, and conversational tone — as if a friendly Malaysian sharing useful information with the community on Facebook.  
-Use approachable language, be respectful, avoid slang, and make the post feel helpful and positive.  
-At the end, gently encourage readers to stay updated and make smart decisions.  
+Please rewrite the content in a polite, warm, and conversational tone — as if a friendly Malaysian sharing useful information with the community on Facebook. 
+No need greeting just go straight to the topic, make it more straight forward
+Use approachable language, be respectful, avoid slang, and make the post feel helpful and positive.    
 Output only the final version of the post in Malay. 
 
 Original news:
