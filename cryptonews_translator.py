@@ -7,10 +7,10 @@ from datetime import datetime
 # Environment Variables
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 APIFY_API_TOKEN = os.getenv("APIFY_API_TOKEN")
-FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")  # Optional for now
-FB_PAGE_ID = os.getenv("FB_PAGE_ID")  # Optional for now
+FB_PAGE_ACCESS_TOKEN = os.getenv("FB_PAGE_ACCESS_TOKEN")
+FB_PAGE_ID = os.getenv("FB_PAGE_ID")
 
-# Gemini prompt template
+# Gemini Prompt
 GEMINI_PROMPT_TEMPLATE = """
 Translate the following news into Malay.  
 Then, kindly write a short conclusion or summary of the news in less than 280 characters in 1 paragraph.  
@@ -28,7 +28,6 @@ Original news:
 '{text}'
 """
 
-# Translate text using Gemini API
 def translate_text_gemini(text):
     if not text or not isinstance(text, str) or not text.strip():
         return "Translation failed"
@@ -63,7 +62,6 @@ def translate_text_gemini(text):
             return "Translation failed"
     return "Translation failed"
 
-# Fetch all crypto news from Apify
 def fetch_news_from_apify():
     url = f"https://api.apify.com/v2/acts/buseta~crypto-news/run-sync-get-dataset-items?token={APIFY_API_TOKEN}"
     try:
@@ -77,27 +75,26 @@ def fetch_news_from_apify():
         print(f"[Apify Exception] {e}")
         return []
 
-# Post text to Facebook (if configured)
-def post_to_facebook(message):
+def post_image_to_facebook(image_url, caption):
     if not FB_PAGE_ACCESS_TOKEN or not FB_PAGE_ID:
-        print("[INFO] Facebook configuration not found. Skipping posting.")
+        print("[INFO] Facebook config not found. Skipping post.")
         return False
 
-    fb_api_url = f"https://graph.facebook.com/{FB_PAGE_ID}/feed"
+    fb_api_url = f"https://graph.facebook.com/{FB_PAGE_ID}/photos"
     post_data = {
-        "message": message,
+        "url": image_url,
+        "message": caption,
         "access_token": FB_PAGE_ACCESS_TOKEN
     }
 
     response = requests.post(fb_api_url, data=post_data)
     if response.status_code == 200:
-        print(f"[Post Success]")
+        print("[Post Success with Image]")
         return True
     else:
         print(f"[Post Error] {response.status_code}: {response.text}")
         return False
 
-# Save translated content (before posting)
 def save_to_json(news_list, filename="translated_news.json"):
     output = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -107,10 +104,9 @@ def save_to_json(news_list, filename="translated_news.json"):
         json.dump(output, f, ensure_ascii=False, indent=4)
     print(f"[JSON Saved] {filename}")
 
-# Main function
 def main():
     if not APIFY_API_TOKEN or not GEMINI_API_KEY:
-        print("[ERROR] APIFY_API_TOKEN or GEMINI_API_KEY missing!")
+        print("[ERROR] Missing API tokens!")
         return
 
     fetched_news = fetch_news_from_apify()
@@ -120,24 +116,28 @@ def main():
         print(f"\nProcessing news {idx + 1} of {len(fetched_news)}")
 
         original_url = news.get("link") or ""
-        content_to_translate = f"{news.get('title', '')}\n\n{news.get('summary', '')}\n\n{news.get('content', '')}\n\nSumber asal: {original_url}"
+        image_url = news.get("image") or ""
+        full_text = f"{news.get('title', '')}\n\n{news.get('summary', '')}\n\n{news.get('content', '')}\n\nSumber asal: {original_url}"
 
-        translated_fb_post = translate_text_gemini(content_to_translate)
-
-        if translated_fb_post == "Translation failed":
-            print(f"[SKIP] Translation failed for news {idx + 1}. Skipping this news.")
+        caption = translate_text_gemini(full_text)
+        if caption == "Translation failed":
+            print(f"[SKIP] Translation failed for news {idx + 1}")
             continue
 
         post_success = False
-        # Only attempt post if FB config exists
         if FB_PAGE_ACCESS_TOKEN and FB_PAGE_ID:
-            post_success = post_to_facebook(translated_fb_post)
+            if image_url:
+                post_success = post_image_to_facebook(image_url, caption)
+            else:
+                print("[INFO] No image URL. Skipping post for now.")
         else:
-            print("[INFO] Facebook post skipped. Just saving to JSON for review.")
+            print("[INFO] FB config missing. Skipping post and saving preview.")
 
         translated_news.append({
+            "title": news.get("title"),
             "original_url": original_url,
-            "translated_facebook_post": translated_fb_post,
+            "image_url": image_url,
+            "translated_facebook_post": caption,
             "timestamp": news.get("time", datetime.now().isoformat()),
             "status": "Posted" if post_success else "Ready for post"
         })
