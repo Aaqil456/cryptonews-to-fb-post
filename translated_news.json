@@ -1,119 +1,165 @@
 {
-    "timestamp": "2025-04-01 07:16:41",
+    "timestamp": "2025-04-01 10:20:42",
     "all_news": [
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb9010d0e9e96c66c69573",
-            "translated_facebook_post": "Harga Pi Coin hari ni (1 April) macam tengah berada di paras sokongan penting sekitar $0.62 hingga $0.68. Ada potensi untuk naik sikit, tapi kena tengok juga reaksi pasaran.  Kalau harga jatuh bawah paras ni, mungkin trend menurun akan berterusan.  Secara keseluruhannya, keadaan masih agak tak menentu.",
-            "timestamp": "2025-04-01 07:00:00",
-            "status": "Ready for post"
+            "title": "Watch Out for Dogecoin: Significant Price Drops Ahead",
+            "original_url": "https://en.coin-turk.com/watch-out-for-dogecoin-significant-price-drops-ahead/",
+            "image_url": "https://en.coin-turk.com/wp-content/uploads/2025/04/dogecoin-1018.jpg",
+            "translated_facebook_post": "Harga Dogecoin mungkin akan turun banyak kalau tahap sokongan utama pecah, kata penganalisis. Ethereum pun perlu dipantau rapat,  dan XRP juga berisiko kalau jatuh bawah paras tertentu.  Secara keseluruhannya, pasaran kripto nampak agak mencabar sekarang ni.",
+            "timestamp": "2025-04-01 10:08:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://www.ethnews.com/can-bitcoin-xrp-and-ethereum-turn-1k-into-100k-by-2025/",
-            "translated_facebook_post": "Berita ni cakap pasal potensi Bitcoin, XRP, dan Ethereum untuk pulangkan pelaburan $1000 kepada $100,000 menjelang 2025.  Tapi,  ada satu lagi projek kripto, MAGACOINFINANCE, yang dikatakan berpotensi lebih tinggi untuk capai pulangan besar tu disebabkan pre-sale dia yang tengah berlangsung.  Selain tu,  ada juga info ringkas pasal ADA, OP, dan VET.",
-            "timestamp": "2025-04-01 07:00:00",
-            "status": "Ready for post"
+            "title": "Why Elon Musk’s Access to SEC Data Is Raising Eyebrows",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebbb6e333c186619ce914b",
+            "image_url": "https://www.cointribune.com/app/uploads/2025/04/Elon-Musk-Template.png",
+            "translated_facebook_post": "Ramai bimbang dengan akses Elon Musk kepada maklumat sulit SEC.  Keadaan ni mungkin beri dia kelebihan tak adil dalam pasaran, terutamanya dalam industri kripto.  Risiko konflik kepentingan dan manipulasi data amat membimbangkan.",
+            "timestamp": "2025-04-01 10:05:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb90116824c50f61af8e15",
-            "translated_facebook_post": "CEO Coinbase nak pengguna stablecoin dapat faedah macam akaun simpanan biasa.  Sekarang ni undang-undang tak cukup updated, jadi CEO tu harap kerajaan Amerika ubah peraturan supaya pengguna boleh dapat untung.",
-            "timestamp": "2025-04-01 07:00:00",
-            "status": "Ready for post"
+            "title": "Elon Musk's Federal Role: Insights and Market Reactions",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebba38333c186619ce913a",
+            "image_url": "https://coincu.com/wp-content/uploads/2025/04/elon-musk-dogecoin-dynamics.png",
+            "translated_facebook_post": "Berita tentang Elon Musk dilantik ke jawatan kerajaan sebagai pekerja kerajaan khas selama 130 hari je, buat pasaran kripto, terutamanya Dogecoin, agak tak menentu.  Harga Dogecoin naik turun ikut situasi, dan ramai yang tunggu tengok apa jadi lepas ni.  Nampaknya, ada potensi besar untuk bidang teknologi dan kerajaan bersilang.",
+            "timestamp": "2025-04-01 10:02:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee55aec81759989ee06",
-            "translated_facebook_post": "Kentucky dah tarik balik saman terhadap Coinbase pasal servis staking.  Ini susulan beberapa negeri lain buat benda sama, harap dapat peraturan yang lebih jelas di peringkat persekutuan untuk industri kripto ni.",
-            "timestamp": "2025-04-01 06:58:00",
-            "status": "Ready for post"
+            "title": "BREAKING Crypto News: Bitcoin Hits $500,000 on one Exchange – Traders in Shock!",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebba390b3a970402e11a4e",
+            "image_url": "https://cryptoticker-strapi-media.s3.eu-central-1.amazonaws.com/freepik_the_style_is_candid_image_photography_with_natural_60555_12aead56d2.jpeg",
+            "translated_facebook_post": "Berita mengejut hari ini! Harga Bitcoin naik mendadak sampai $500,000 di satu bursa, Bitget, buat ramai terkejut. Ramai yang cuba ambil peluang, tapi jualan tak berjaya. Ada juga yang kata duit dalam akaun hilang. Rupa-rupanya… berita palsu sempena April Fool’s Day!\n\n\nKesimpulan:  Harga Bitcoin sampai $500,000 di satu bursa,  rupanya berita palsu Hari April Mop!",
+            "timestamp": "2025-04-01 10:01:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee4ce114f2936f74b18",
-            "translated_facebook_post": "Lagi banyak kes penipuan mata wang kripto berlaku pada suku pertama tahun ni, kerugian mencecah $1.63 billion!  Lebih dua kali ganda berbanding tahun lepas.  Kebanyakan kerugian disebabkan dua kes besar, dan bursa mata wang kripto terjejas teruk.",
-            "timestamp": "2025-04-01 06:56:00",
-            "status": "Ready for post"
+            "title": "Crypto-Backed Mortgages: A New Way to Buy Homes",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebba370b3a970402e11a4a",
+            "image_url": "https://coinomedia.com/wp-content/uploads/2025/04/Crypto-Mortgage.jpg",
+            "translated_facebook_post": "Sekarang ni dah ada gadai janji guna duit kripto!  Jadi, korang boleh beli rumah tanpa perlu jual Bitcoin atau Ethereum korang.  Tapi ingat, harga kripto ni turun naik, jadi kena berhati-hati.  Prosesnya mungkin lebih cepat dari bank biasa, tapi pilihan masih terhad.",
+            "timestamp": "2025-04-01 10:01:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee5d0e9e96c66c69571",
-            "translated_facebook_post": "Kentucky tarik balik saman terhadap Coinbase, ikut jejak South Carolina dan Vermont.  Berita baik ni bagi pasaran kripto, saham Coinbase pun naik 5.8%!  Ramai nampak potensi lebih ramai pelabur besar nak masuk bidang ni lepas kes ni selesai.  Kesimpulannya, situasi ni tunjuk perubahan positif dalam peraturan kripto di Amerika, dan ramai yang optimis tentang masa depan kripto.",
-            "timestamp": "2025-04-01 06:56:00",
-            "status": "Ready for post"
+            "title": "Tether’s Giant Bitcoin Buy: What 8,888 BTC Means for the Market",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebba3762881171b09c0fd4",
+            "image_url": "https://captainaltcoin.com/wp-content/uploads/2024/07/Copy-of-P2P-Review-6-2-300x175.png",
+            "translated_facebook_post": "Tether, syarikat mata wang kripto, baru je beli Bitcoin sebanyak 8,888 BTC bernilai $735 juta.  Ini bukan kali pertama; pembelian besar sebelum ini juga menyebabkan harga Bitcoin naik.  Kali ini pun, ramai yang jangka harga Bitcoin akan meningkat semula. Walaupun harga sekarang agak turun, pembelian besar Tether ni mungkin petanda positif untuk pelabur jangka panjang.",
+            "timestamp": "2025-04-01 10:00:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee5ce114f2936f74b1a",
-            "translated_facebook_post": "UPBIT baru-baru ini mengadakan pameran seni \"Modernity 1900-1980\" yang memaparkan karya seni asli dari era penting dalam dunia seni.  Pameran ini menarik minat ramai dan dijangka akan meningkatkan lagi penglibatan budaya UPBIT, malah mungkin membuka peluang kerjasama dan memberi impak positif kepada imej syarikat.  Penganjuran pameran ini juga diharap dapat mendorong syarikat teknologi lain untuk turut serta dalam aktiviti seumpama ini.\n\n\nKesimpulan:  Pameran seni UPBIT berjaya menarik perhatian ramai dan dijangka akan membuka lebih banyak peluang serta mengukuhkan lagi imej syarikat.",
-            "timestamp": "2025-04-01 06:52:00",
-            "status": "Ready for post"
+            "title": "BitTorrent Releases Weekly Report Amidst Market Fluctuations",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb91b333c186619ce9135",
+            "image_url": "https://www.kanalcoin.com/wp-content/uploads/2025/04/businessman-focused-office-scene.png",
+            "translated_facebook_post": "Laporan mingguan BitTorrent baru-baru ini dedahkan perkembangan terkini projek mereka,  terutamanya strategi baharu yang diadaptasi  menghadapi ketidaktentuan pasaran kripto.  Mereka menekankan komitmen terhadap inovasi dan kerjasama strategik.  Laporan ini dilihat sebagai tindak balas bijak terhadap cabaran semasa.",
+            "timestamp": "2025-04-01 09:56:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee56824c50f61af8e0f",
-            "translated_facebook_post": "Dasar Trump nak kenakan tarif baru ni buat pasaran kripto agak goyang.  Harga Bitcoin, Ethereum, dan yang lain-lain dah jatuh minggu lepas.  Walaupun jangka pendek nampak gelap sikit,  jangka panjang mungkin cerah sebab dasar kerajaan  Amerika nampaknya positif terhadap kripto.  Kita tengok jelah macam mana nanti.",
-            "timestamp": "2025-04-01 06:50:00",
-            "status": "Ready for post"
+            "title": "Crypto Hacks Drop in March, But Phishing Scams Still a Major Threat",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebbb6e333c186619ce9149",
+            "image_url": "https://thecoinrise.com/wp-content/uploads/2025/04/March-saw-a-significant-decline-in-cryptocurrency-related-losses-from-exploits-hacks-and-scams-totaling-just-28.8-million.jpg",
+            "translated_facebook_post": "Kehilangan wang berkaitan kripto menurun pada Mac, cuma $28.8 juta je.  Walaupun begitu,  penipuan dalam bentuk 'phishing' masih menjadi ancaman besar, dengan anggaran kerugian mencecah lebih $46 juta.  Beberapa kes serangan siber berjaya dipulihkan, tapi kena berhati-hati dengan mesej palsu!",
+            "timestamp": "2025-04-01 09:56:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8ee46824c50f61af8e0d",
-            "translated_facebook_post": "Trump baru je tandatangan perintah eksekutif untuk percepatkan pelaburan dan urusan berkaitan Akta Cip.  Satu pejabat baharu akan ditubuhkan di Jabatan Perdagangan untuk memudahkan pelaburan besar, selaras dengan janji beliau untuk menarik lebih banyak pelaburan ke Amerika Syarikat.",
-            "timestamp": "2025-04-01 06:50:00",
-            "status": "Ready for post"
+            "title": "Shocking Crypto Sell-off: Ethereum Co-founder Vitalik Buterin Dumps Altcoins DHN and LEDOG",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb91a0b3a970402e11a3e",
+            "image_url": "https://bitcoinworld.co.in/wp-content/uploads/Shocking-Crypto-Sell-off-Ethereum-Co-founder-Vitalik-Buterin-Dumps-Altcoins-DHN-and-LEDOG.webp",
+            "translated_facebook_post": "Pengasas bersama Ethereum, Vitalik Buterin, dilaporkan telah menjual sejumlah besar duit kripto DHN dan LEDOG.  Tindakan ini menyebabkan spekulasi tentang masa depan duit kripto tersebut dan pasaran altcoin secara keseluruhan.  Ia juga mengingatkan kita tentang risiko melabur dalam duit kripto yang kurang dikenali.",
+            "timestamp": "2025-04-01 09:55:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/headlines/news/ethereum-reclaims-no-1-spot-as-leading-dex-chain-for-first-since-september-overtakes-solana/",
-            "translated_facebook_post": "Ethereum dah ambil balik tempat nombor satu sebagai rangkaian DEX terkemuka buat kali pertama sejak September lepas, mengatasi Solana.  Ini berlaku walaupun pasaran sekarang agak lembap, terutamanya dalam sektor memecoin.\n\n\nKesimpulan:  Ethereum kembali juara sebagai rangkaian DEX utama, mengatasi Solana, walaupun keadaan pasaran agak kurang memberangsangkan.",
-            "timestamp": "2025-04-01 06:48:00",
-            "status": "Ready for post"
+            "title": "Best Meme Coin to Buy: How to Spot the Next Viral Crypto",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb91b0b3a970402e11a42",
+            "image_url": "https://financefeeds.com/wp-content/uploads/2025/04/Best-Meme-Coin-to-Buy.jpeg",
+            "translated_facebook_post": "Baiklah, ini terjemahan berita tersebut dalam Bahasa Malaysia:\n\n\"Pasaran kripto tengah meriah, dan meme coin sekali lagi menjadi topik hangat.  Soalan yang bermain di fikiran setiap pelabur: Meme coin apa yang terbaik untuk dibeli sekarang? Bukan Doge, bukan Shiba.  Yang tengah naik daun pada tahun 2025 ialah Dawgz AI.  Meme coin ni gabung budaya meme yang viral dengan teknologi AI yang canggih.  Ada pilihan staking, bot dagangan, dan komuniti online yang aktif.  Kalau anda rasa meme coin semua sekadar hype, fikirkan semula. Dawgz AI tengah mendahului dengan gabungan tenaga viral dan utiliti blockchain yang praktikal.  Ia menawarkan peluang pelaburan awal pada harga rendah, ganjaran staking serta penggunaan bot dagangan AI.  Dawgz AI juga telus dan selamat, dengan audit kontrak pintar yang telah dilakukan.  Secara ringkasnya, Dawgz AI nampaknya berpotensi untuk berkembang pesat.\"\n\n\nKesimpulan:\n\nDawgz AI, meme coin baru,  gabung kelebihan budaya meme viral dengan teknologi AI canggih, menawarkan potensi pelaburan menarik menerusi ganjaran staking dan bot dagangan.",
+            "timestamp": "2025-04-01 09:55:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8c73d0e9e96c66c69567",
-            "translated_facebook_post": "Harga Ethereum jatuh banyak, sampai paras terendah dalam 4 tahun!  Yuran transaksi pun rendah sangat sekarang.  Walaupun ada yang positif macam yuran murah, ramai jual aset, dan guna platform layer-2.  Kena tengok macam mana perkembangan dia lepas ni.",
-            "timestamp": "2025-04-01 06:48:00",
-            "status": "Ready for post"
+            "title": "5 Under $1 Cryptos Ready to Explode—Expert Predictions Point to 20,000% Gains by Q4 2025!",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb7e90b3a970402e11a3b",
+            "image_url": "https://en.bitcoinsistemi.com/wp-content/uploads/2025/04/17435011248152030-image2.png",
+            "translated_facebook_post": "Beberapa kripto berharga bawah $1 dijangka naik mendadak, mungkin sampai 20,000% menjelang akhir 2025.  Pelaburan awal dalam projek seperti XYZVerse, yang menggabungkan sukan dan kripto,  menawarkan potensi pulangan tinggi.  LUNC, XLM, HBAR, dan TRX juga menunjukkan potensi yang menarik.",
+            "timestamp": "2025-04-01 09:52:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8c73d0e9e96c66c69565",
-            "translated_facebook_post": "Harga ADA jatuh lebih 40% selepas mencecah $1, mengejutkan ramai pelabur. Ramai beralih kepada Remittix, platform pembayaran rentas sempadan yang menawarkan pulangan lebih pantas dan penyelesaian praktikal.  Masa depan ADA bergantung kepada kejayaan pembangunan dan pelaksanaan ciri-ciri baharu, manakala Remittix dilihat sebagai pilihan menarik bagi mereka yang mahukan pulangan segera.",
-            "timestamp": "2025-04-01 06:45:00",
-            "status": "Ready for post"
+            "title": "Japan to strongly advocate for exemption from U.S. auto tariffs",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb91a62881171b09c0fd1",
+            "image_url": "https://www.cryptopolitan.com/wp-content/uploads/2025/04/japan-to-advocate-for-exemption.webp",
+            "translated_facebook_post": "Jepun akan usaha kuat dapatkan pengecualian cukai import kereta dari Amerika Syarikat.  Mereka akan ambil langkah mitigasi kesan negatif cukai tersebut kepada ekonomi dan pekerjaan.  Peningkatan kos sara hidup dan inflasi juga menjadi kebimbangan.  Jepun akan cuba dapatkan kenaikan gaji untuk seimbangkan kos sara hidup yang meningkat.",
+            "timestamp": "2025-04-01 09:51:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8c74d0e9e96c66c69569",
-            "translated_facebook_post": "Harga RED turun 4.1%, berlegar sekitar $0.5164-$0.5603.  Kalau harga naik lepas $0.56, mungkin akan naik lagi. Tapi kalau tak berjaya, harga mungkin jatuh ke $0.5164.  Pasaran kripto agak tak menentu sekarang, jadi harga RED pun ikut terkesan.  Keadaan pasaran perlu diperhatikan untuk tengok arah aliran seterusnya.",
-            "timestamp": "2025-04-01 06:45:00",
-            "status": "Ready for post"
+            "title": "Bye Bye Europe: As Binance’s Official Stopped Its USDT Trading in the EEA Region",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb7e862881171b09c0fcb",
+            "image_url": "https://image.coinpedia.org/wp-content/uploads/2024/12/18162425/Binance-to-Delist-SUI-HMSTR-BNT-CYBER-and-AEUR-on-December-20.webp",
+            "translated_facebook_post": "Binance dan beberapa bursa kripto lain dah henti dagangan USDT dan beberapa stablecoin lain di Eropah sebab nak patuh peraturan baru MiCA.  Pengguna masih boleh pegang dan dagang stablecoin tu guna kontrak perpetual, cuma pilihan spot trading dah tak ada.  Beberapa stablecoin lain pun terkesan.",
+            "timestamp": "2025-04-01 09:51:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8c74ce114f2936f74b11",
-            "translated_facebook_post": "Mata wang kripto REZ melonjak naik lebih 35% sebelum disenaraikan di bursa Bithumb.  Harga meningkat mendadak, tetapi mungkin akan turun selepas pelancaran rasmi.  Penganalisis ada yang nampak potensi kenaikan lagi, ada yang berhati-hati.  Jadi kena pantau rapat pergerakan harga ya!",
-            "timestamp": "2025-04-01 06:44:00",
-            "status": "Ready for post"
+            "title": "Why is Ethereum (ETH) price up today?",
+            "original_url": "https://coinmarketcap.com/community/en/articles/65bbe3071f33205a09382fc7",
+            "image_url": "https://images.cointelegraph.com/images/840_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMDgvNjJhOWU5MTEtNDNhMi00Y2M0LTkyYTEtZjQ4MTlkOGYwZGI1.jpg",
+            "translated_facebook_post": "Harga Ethereum (ETH) naik disebabkan beberapa faktor. Pelancaran Privacy Pools, pengurangan bekalan ETH di bursa, dan peningkatan pengumpulan oleh pelabur besar memberi impak positif.  Ramalan menunjukkan harga mungkin meningkat sehingga 12%.  Secara ringkasnya, gabungan inovasi, strategi pelaburan, dan momentum pasaran menaikkan harga ETH.",
+            "timestamp": "2025-04-01 09:51:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8b42d0e9e96c66c69560",
-            "translated_facebook_post": "Pasaran kripto mula menunjukkan perkembangan positif pada Q2 lepas mengharungi Q1 yang agak lembap. EOS naik mendadak 18%, pecah rintangan utama, manakala Filecoin pun menunjukkan potensi untuk ikut jejak EOS.  Kedua-dua matawang kripto ni menunjukkan potensi untuk terus meningkat.  Tapi ingat, kena buat kajian sendiri sebelum melabur, ya!",
-            "timestamp": "2025-04-01 06:44:00",
-            "status": "Ready for post"
+            "title": "More Red on the Horizon for BTC While Analyst Sets Cycle Top Target for Altcoin VELO at $0.95 – $1.65",
+            "original_url": "https://cryptonewsland.com/more-red-on-the-horizon/",
+            "image_url": "https://cryptonewsland.com/wp-content/uploads/2025/03/Altcoin-VELO.jpg",
+            "translated_facebook_post": "Harga Bitcoin dijangka turun lagi sebelum naik semula, mungkin mencecah antara $50,000 hingga $60,000.  Walaupun begitu, ramai masih positif tentang masa depan Bitcoin.  Seorang penganalisis pula jangka harga altcoin VELO akan naik mendadak, antara $0.95 hingga $1.65.",
+            "timestamp": "2025-04-01 09:50:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8b47d0e9e96c66c69562",
-            "translated_facebook_post": "Pasaran kripto agak goyang hari ini, takut perang perdagangan gara-gara pengumuman tarif Presiden Trump.  Walaupun begitu, Bitcoin masih kukuh, naik sikit. Ethereum pun meningkat, manakala altcoins lain macam-macam reaksi. EOS antara yang naik tinggi, Jupiter pula antara yang jatuh.  Secara keseluruhan, pasaran masih berhati-hati.",
-            "timestamp": "2025-04-01 06:39:00",
-            "status": "Ready for post"
+            "title": "Bitcoin (BTC) has hit the Bottom: Is the Trend Reversal Starting Now?",
+            "original_url": "https://coinmarketcap.com/headlines/news/bitcoin-btc-has-hit-the-bottom-is-the-trend-reversal-starting-now/",
+            "image_url": "https://images.cryptodaily.co.uk/space/Bitcoin%20hits%20bottom%20now%20trend%20reversal%201.jpg",
+            "translated_facebook_post": "**Translation:**\n\nBitcoin (BTC) dah cecah paras terendah: Adakah pembalikan trend bermula sekarang?\n\nAda tanda-tanda yang menunjukkan Bitcoin dah sampai ke paras terendah, susulan trend menurun sejak 20 Januari tahun ini. Dalam tempoh itu...\n\n\n**Conclusion:**\n\nNampaknya Bitcoin dah sampai ke tahap paling rendah.  Mungkin ni tanda harga akan naik balik, tapi kita tengok dulu perkembangan selanjutnya.",
+            "timestamp": "2025-04-01 09:48:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://cryptonewsland.com/3-bullish-altcoins-to-buy-before-q2-of-2025/",
-            "translated_facebook_post": "Ramai cakap tiga altcoin ni berpotensi naik harga sebelum suku kedua tahun 2025: Cardano, Litecoin, dan Terra Classic.  Cardano makin maju dengan sistem *smart contract* yang lebih baik, Litecoin kekal popular sebab transaksi cepat dan kos rendah, manakala Terra Classic cuba bangkit semula dengan sokongan komuniti yang kuat.  Jadi, kena tengok perkembangan masing-masing sebelum buat keputusan pelaburan.",
-            "timestamp": "2025-04-01 06:35:00",
-            "status": "Ready for post"
+            "title": "Bybit Leads March Capital Inflows and Reclaims No. 2 Spot in Global Trading Volume",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb6a50b3a970402e11a33",
+            "image_url": "https://financefeeds.com/wp-content/uploads/2022/03/official-image.png",
+            "translated_facebook_post": "Translation (Malay):\n\nBybit pulih dengan memberangsangkan pada Mac lalu,  mencatatkan kemasukan modal bersih sebanyak $3.61 bilion dan kembali ke kedudukan kedua sebagai bursa kripto terbesar di dunia.  Kejayaan ini menunjukkan tindak balas pantas Bybit terhadap cabaran baru-baru ini, sambil mengekalkan keselamatan dan ketelusan kepada pengguna.  Bybit mengetuai aliran masuk modal di kalangan semua bursa terpusat pada bulan Mac 2025, dengan $3.61 bilion modal baharu yang diterima, meningkatkan Jumlah Nilai Terkunci (TVL) kepada $14.9 bilion.  Peningkatan ketara ini, sebanyak $612.62 juta dalam tempoh tujuh hari dan $3.61 bilion sepanjang bulan, didorong oleh peningkatan kepercayaan pengguna hasil daripada fokus Bybit terhadap peningkatan keselamatan dan ketahanan operasi.  Bybit juga berjaya mengembalikan kedudukan kedua dalam jumlah dagangan pada Mac 2025, sebahagian besarnya disebabkan oleh penambahbaikan dalam penyediaan harga runcit (RPI) yang meningkatkan kecairan untuk pasangan dagangan utama seperti BTC/USDT dan ETH/USDT.  Walaupun krisis baru-baru ini, Bybit beroperasi tanpa gangguan, menyokong pengeluaran dan melancarkan token baharu, serta meneruskan program ganjaran mereka. Inovasi dan penglibatan pengguna juga diteruskan dengan pelancaran empat token baharu dan pelbagai promosi.  Bybit komited terhadap kepercayaan dan keselamatan pengguna, melabur secara berterusan dalam ketelusan dan program anti-pengubahan wang haram.\n\n\nConclusion (Malay):\n\nBybit bangkit semula dengan cemerlang pada Mac lepas, mencatat aliran masuk modal tinggi dan kembali sebagai bursa kripto kedua terbesar dunia.  Kejayaan ini hasil fokus pada keselamatan, inovasi, dan kepuasan pengguna.",
+            "timestamp": "2025-04-01 09:46:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb8909d0e9e96c66c69555",
-            "translated_facebook_post": "Berita terkini pasal Ripple (XRP): Harga XRP jatuh walaupun kes mahkamah dah selesai. Walaupun syiling stablecoin RLUSD mencetak rekod baru,  ramalan harga XRP agak membimbangkan, ada yang jangka harga boleh jatuh ke $1.2 malah $1.07.  Namun, ada juga yang positif dan jangka harga akan naik.  Kesimpulannya, situasi harga XRP masih tak menentu.",
-            "timestamp": "2025-04-01 06:32:00",
-            "status": "Ready for post"
+            "title": "Cryptocurrency Market Braces for Trump’s April 2 Tariff Policy Shockwave",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb6a5ba151764e4ccb171",
+            "image_url": "https://bitcoinworld.co.in/wp-content/uploads/Cryptocurrency-Market-Braces-for-Trumps-April-2-Tariff-Policy-Shockwave.webp",
+            "translated_facebook_post": "Bekas Presiden Donald Trump akan umumkan dasar tarif baharu pada 2 April.  Ini mungkin akan menjejaskan pasaran kripto, mungkin naik, mungkin turun.  Jadi, eloklah berhati-hati dan pantau perkembangannya.",
+            "timestamp": "2025-04-01 09:45:00",
+            "status": "Posted"
         },
         {
-            "original_url": "https://coinmarketcap.com/community/en/articles/67eb890af0dd171955b91f5d",
-            "translated_facebook_post": "Pasaran kripto Iran gempar dengan skandal penipuan besar melibatkan pegawai perisikan Pengawal Revolusi Islam.  Pegawai terbabit didakwa menggelapkan aset digital bernilai $21 juta, menjejaskan ribuan pelabur.  Siasatan mendedahkan rasuah berleluasa, dengan pegawai penyiasat sendiri terlibat.  Ramai mangsa masih belum dapat pampasan, dan seorang ketua syarikat kripto dijatuhi hukuman penjara, tetapi berjaya melarikan diri. Kes ini mendedahkan kelemahan kawal selia pasaran kripto Iran.",
-            "timestamp": "2025-04-01 06:31:00",
-            "status": "Ready for post"
+            "title": "Brett Created Millionaires—Arctic Pablo Joins the Ranks of Top New Meme Coins for Exponential Returns",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67eba8034947423a49f77238",
+            "image_url": "https://academy-public.coinmarketcap.com/srd-optimized-uploads/ab8460909bd44889a91ab7e21c81a349.png",
+            "translated_facebook_post": "Berita tentang  Arctic Pablo Coin, satu lagi matawang kripto jenis *meme coin* yang tengah naik.  Ia guna pendekatan unik dengan jualan awal berperingkat, membakar token yang tak terjual, dan ada program *staking* dengan pulangan tinggi.  Pelaburan awal nampaknya berpotensi untung besar, tapi macam biasa, risiko pelaburan dalam kripto tetap tinggi.",
+            "timestamp": "2025-04-01 09:45:00",
+            "status": "Posted"
+        },
+        {
+            "title": "Arctic Pablo Coin’s Presale Growth, Dog (Bitcoin)’s Meme Nostalgia, and Mog Coin’s Engaged Community – Must-Watch Meme Coins",
+            "original_url": "https://coinmarketcap.com/community/en/articles/67ebb6a60b3a970402e11a35",
+            "image_url": "https://thecoinrise.com/wp-content/uploads/2025/03/1-793.png",
+            "translated_facebook_post": "Sekarang ni, ramai berminat dengan mata wang kripto jenis meme coin, macam Arctic Pablo Coin, Dog (Bitcoin), dan Mog Coin.  Arctic Pablo Coin tengah naik daun sebab presale dia,  Dog (Bitcoin) pulak popular sebab nostalgia Bitcoin, dan Mog Coin aktif dengan komuniti dia.  Pelaburan dalam mata wang ini berisiko, tetapi berpotensi untung besar jika pandai pilih masa.",
+            "timestamp": "2025-04-01 09:45:00",
+            "status": "Posted"
         }
     ]
 }
