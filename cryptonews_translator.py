@@ -22,6 +22,7 @@ No shouting words or unnecessary excitement.
 Keep it informative, approachable, and casual — but clean and neutral. 
 Do not use emojis unless they appear in the original text. 
 Do not translate brand names or product names.
+Do not phrase the summary as if it is referring to a news source—write it as a general insight or observation instead
 
 Original news:
 '{text}'
