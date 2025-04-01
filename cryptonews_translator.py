@@ -14,15 +14,17 @@ FB_PAGE_ID = os.getenv("FB_PAGE_ID")
 GEMINI_PROMPT_TEMPLATE = """
 Translate the following news into Malay.  
 Then, kindly write a short conclusion or summary of the news in less than 280 characters in 1 paragraph.  
-Only return the short conclusion without any explanation. 
-Use natural, conversational, friendly Malaysian Malay — like how a friend shares info. 
-Keep it simple, relaxed, and easy to understand. 
-Avoid using exaggerated slang words or interjections (such as "Eh," "Korang," "Woi," "Wooohooo," "Wooo," or anything similar). 
-No shouting words or unnecessary excitement. 
-Keep it informative, approachable, and casual — but clean and neutral. 
-Do not use emojis unless they appear in the original text. 
-Do not translate brand names or product names.
-Do not phrase the summary as if it is referring to a news source—write it as a general insight or observation instead
+Only return the short conclusion without any explanation, heading, or intro phrase.  
+Use natural, conversational, friendly Malaysian Malay — like how a friend shares info.  
+Keep it simple, relaxed, and easy to understand.  
+Avoid using exaggerated slang words or interjections (such as "Eh," "Korang," "Woi," "Wooohooo," "Wooo," or anything similar).  
+No shouting words or unnecessary excitement.  
+Keep it informative, approachable, and casual — but clean and neutral.  
+Do not use emojis unless they appear in the original text.  
+Do not translate brand names or product names.  
+Do not phrase the summary as if it is referring to a news source — write it as a general insight or observation instead.  
+⚠️ Do NOT include phrases like "Terjemahan:", "Kesimpulan:", "Baiklah,", "Secara ringkas", "**Conclusion:**", "**Translation:**", or anything similar. Just give the final sentence.
+
 
 Original news:
 '{text}'
